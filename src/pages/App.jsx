@@ -1,6 +1,7 @@
 //Imports de los componentes de React
 import { Routes, Route } from "react-router-dom";
-import './App.css'
+import Inicio from "./Inicio.jsx";
+import '../css/App.css'
 
 function App() {
 
@@ -8,7 +9,8 @@ function App() {
   return (
     <>
       <Routes>
-          <Route path="/Inicio.jsx" element={<Inicio/>} />
+          <Route path="/" element={<Inicio/>} />
+          <Route path="/inicio" element={<Inicio/>} />
       </Routes>
     </>
   )

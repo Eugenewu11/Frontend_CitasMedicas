@@ -1,1 +1,4 @@
 /*CSS de index*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
