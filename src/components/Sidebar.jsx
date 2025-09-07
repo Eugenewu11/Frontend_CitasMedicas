@@ -1,15 +1,18 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
-    console.log("Toggle clicked! Current state:", isOpen);
+    console.log("Toggle clicked! Current state:", isOpen);//Para debug
     setIsOpen(!isOpen);
   };
 
   const handleNavigation = (path) => {
     console.log(`Navegando a: ${path}`);
+    navigate(path); // Esta línea hace la navegación real 
     // Solo cerrar en móviles
     if (window.innerWidth < 1024) {
       setIsOpen(false);
@@ -41,12 +44,13 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <nav
-        className={`fixed left-0 top-0 h-full w-64 bg transform transition-transform duration-300 ease-in-out z-40 ${
+        className={`fixed left-0 top-0 h-full w-64 bg transform transition-transform duration-300 ease-in-out z-40 flex flex-col ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         style={{ backgroundColor: 'rgb(229,93,93)', fontFamily: 'Roboto, sans-serif' }}
       >
-        <div className="p-6">
+        {/* Contenido superior del sidebar */}
+        <div className="flex-1 p-6">
           {/* Header del sidebar con botón hamburguesa */}
           <div className="flex items-start justify-between mb-8">
             <h2 className="font-oboto text-black font-bold text-lg leading-tight">
@@ -65,7 +69,7 @@ export default function Sidebar() {
             </button>
           </div>
 
-          {/* Enlaces del menú */}
+          {/* Enlaces del menú principales */}
           <div className="space-y-3">
             <button
               onClick={() => handleNavigation('/inicio')}
@@ -122,16 +126,19 @@ export default function Sidebar() {
             >
               Contáctanos
             </button>
-            
-            <button
-              onClick={() => handleNavigation('/logout')}
-              className="block w-full text-left px-4 py-3 text-black font-medium rounded-lg mb-2 bg-transparent shadow-[1px_1px_2px_rgba(0,0,0,0.3)] hover:bg-red-600 hover:text-white transition-all duration-200 "
-            >
-              Cerrar Sesión
-            </button>
-            
           </div>
         </div>
+
+        {/* Botón de registrarse en la parte inferior */}
+        <div className="p-6 pt-0">
+          <button
+            onClick={() => handleNavigation('/registro')}
+            className="block w-full text-left px-4 py-3 text-black font-medium rounded-lg bg-transparent shadow-[1px_1px_2px_rgba(0,0,0,0.3)] hover:bg-red-600 hover:text-white transition-all duration-200 border-t border-black/20"
+          >
+            Registrarse
+          </button>
+        </div>
+
       </nav>
 
       {/* Espaciador para el contenido principal cuando sidebar está abierto en pc */}
