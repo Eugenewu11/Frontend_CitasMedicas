@@ -1,9 +1,8 @@
 function Register() {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-white-100 p-4">
+        <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
             <div 
-                className="w-full max-w-md p-8 rounded-2xl shadow-2xl"
-                style={{ backgroundColor: 'rgb(229,93,93)' }}
+                className="w-full max-w-md p-8 rounded-2xl shadow-2xl bg-blue-900"
             >
                 {/* Título */}
                 <div className="text-center mb-8">
@@ -23,7 +22,7 @@ function Register() {
                             type="text"
                             placeholder="Escribe aquí..."
                             maxLength={50}
-                            className="w-full px-4 py-3 rounded-lg border-none outline-none text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-white focus:ring-opacity-50 transition-all"
+                            className="w-full px-4 py-3 rounded-lg border-none outline-none text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-orange-400 focus:ring-opacity-50 transition-all"
                         />
                     </div>
 
@@ -35,7 +34,7 @@ function Register() {
                         <input
                             type="email"
                             placeholder="Escribe aquí..."
-                            className="w-full px-4 py-3 rounded-lg border-none outline-none text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-white focus:ring-opacity-50 transition-all"
+                            className="w-full px-4 py-3 rounded-lg border-none outline-none text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-orange-400 focus:ring-opacity-50 transition-all"
                         />
                     </div>
 
@@ -47,7 +46,7 @@ function Register() {
                         <input
                             type="tel"
                             placeholder="Escribe aquí..."
-                            className="w-full px-4 py-3 rounded-lg border-none outline-none text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-white focus:ring-opacity-50 transition-all"
+                            className="w-full px-4 py-3 rounded-lg border-none outline-none text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-orange-400 focus:ring-opacity-50 transition-all"
                         />
                     </div>
 
@@ -55,7 +54,7 @@ function Register() {
                     <div className="pt-4">
                         <button
                             type="button"
-                            className="w-full bg-black text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-opacity-50"
+                            className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-50"
                         >
                             REGISTRAR
                         </button>
