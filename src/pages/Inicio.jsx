@@ -1,5 +1,3 @@
-import Footer from '../components/Footer.jsx'
-
 function Inicio() {
     return (
         <div className="min-h-screen bg-gray-50">
@@ -26,7 +24,7 @@ function Inicio() {
                         </div>
                         <div className="hidden md:block">
                             <img 
-                                src="/inicio/draHero1.avif" 
+                                src="/draHero1.avif" 
                                 alt="Equipo médico profesional" 
                                 className="rounded-lg shadow-2xl"
                             />
@@ -170,7 +168,7 @@ function Inicio() {
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="bg-gray-50 rounded-lg p-6">
                             <div className="flex items-center mb-4">
-                                <img className="w-12 h-12 rounded-full object-cover mr-4" src="/inicio/test1.jpg" alt="María González" />
+                                <img className="w-12 h-12 rounded-full object-cover mr-4" src="/test1.jpg" alt="María González" />
                                 <div>
                                     <h4 className="font-semibold text-gray-900">María González</h4>
                                     <p className="text-gray-600 text-sm">Paciente desde 2019</p>
@@ -183,7 +181,7 @@ function Inicio() {
                         
                         <div className="bg-gray-50 rounded-lg p-6">
                             <div className="flex items-center mb-4">
-                                <img className="w-12 h-12 rounded-full mr-4" src="/inicio/test2.jpg" alt="Carlos Rodríguez" />
+                                <img className="w-12 h-12 rounded-full mr-4" src="/test2.jpg" alt="Carlos Rodríguez" />
                                 <div>
                                     <h4 className="font-semibold text-gray-900">Carlos Rodríguez</h4>
                                     <p className="text-gray-600 text-sm">Paciente desde 2020</p>
@@ -196,7 +194,7 @@ function Inicio() {
                         
                         <div className="bg-gray-50 rounded-lg p-6">
                             <div className="flex items-center mb-4">
-                                <img className="w-12 h-12 object-cover rounded-full mr-4" src="/inicio/test3.webp" alt="Ana López" />
+                                <img className="w-12 h-12 object-cover rounded-full mr-4" src="/test3.webp" alt="Ana López" />
                                 <div>
                                     <h4 className="font-semibold text-gray-900">Ana López</h4>
                                     <p className="text-gray-600 text-sm">Paciente desde 2018</p>
@@ -231,7 +229,38 @@ function Inicio() {
             </section>
 
             {/* Información de Contacto */}
-                <Footer/>
+            <section className="bg-gray-900 text-white py-12">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 className="text-lg font-semibold mb-4">Horarios de Atención</h3>
+                            <div className="space-y-2 text-gray-300">
+                                <p>Lunes - Viernes: 7:00 AM - 7:00 PM</p>
+                                <p>Sábados: 8:00 AM - 4:00 PM</p>
+                                <p>Emergencias: 24/7</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 className="text-lg font-semibold mb-4">Contacto</h3>
+                            <div className="space-y-2 text-gray-300">
+                                <p>📞 Consultas: +504 2550-1234</p>
+                                <p>🚨 Emergencias: +504 2550-5678</p>
+                                <p>📧 infoEWEMES@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 className="text-lg font-semibold mb-4">Ubicación</h3>
+                            <div className="space-y-2 text-gray-300">
+                                <p>📍 Av. Circunvalación</p>
+                                <p>San Pedro Sula, Cortés</p>
+                                <p>Honduras</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 }
