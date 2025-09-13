@@ -1,3 +1,5 @@
+import Footer from "../components/Footer";
+
 function Inicio() {
     return (
         <div className="min-h-screen bg-gray-50">
@@ -229,38 +231,7 @@ function Inicio() {
             </section>
 
             {/* Información de Contacto */}
-            <section className="bg-gray-900 text-white py-12">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-3 gap-8">
-                        <div>
-                            <h3 className="text-lg font-semibold mb-4">Horarios de Atención</h3>
-                            <div className="space-y-2 text-gray-300">
-                                <p>Lunes - Viernes: 7:00 AM - 7:00 PM</p>
-                                <p>Sábados: 8:00 AM - 4:00 PM</p>
-                                <p>Emergencias: 24/7</p>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h3 className="text-lg font-semibold mb-4">Contacto</h3>
-                            <div className="space-y-2 text-gray-300">
-                                <p>📞 Consultas: +504 2550-1234</p>
-                                <p>🚨 Emergencias: +504 2550-5678</p>
-                                <p>📧 infoEWEMES@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h3 className="text-lg font-semibold mb-4">Ubicación</h3>
-                            <div className="space-y-2 text-gray-300">
-                                <p>📍 Av. Circunvalación</p>
-                                <p>San Pedro Sula, Cortés</p>
-                                <p>Honduras</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                <Footer/>
         </div>
     );
 }

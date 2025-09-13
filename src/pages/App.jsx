@@ -4,6 +4,9 @@ import Inicio from "./Inicio.jsx";
 import Register from './Register.jsx'
 import Navbar from "../components/Navbar.jsx"; 
 import Login from './Login.jsx'
+import Servicios from './Servicios.jsx'
+import Especialidades from './Especialidades.jsx'
+import Medicos from './Medicos.jsx'
 import '../css/App.css'
 
 function App() {
@@ -17,6 +20,9 @@ function App() {
           <Route path="/inicio" element={<Inicio/>} />
           <Route path="/registro" element={<Register/>} />
           <Route path="/login" element={<Login/>} />
+          <Route path="/servicios" element={<Servicios/>} />
+          <Route path="/especialidades" element={<Especialidades/>}/>
+          <Route path="/medicos" element={<Medicos/>}/>
         </Routes>
       </div>
     </div>
