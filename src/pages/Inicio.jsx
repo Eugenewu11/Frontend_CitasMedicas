@@ -170,7 +170,7 @@ function Inicio() {
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="bg-gray-50 rounded-lg p-6">
                             <div className="flex items-center mb-4">
-                                <img className="w-12 h-12 rounded-full object-cover mr-4" src="/test1.jpg" alt="María González" />
+                                <img className="w-12 h-12 rounded-full object-cover mr-4" src="/inicio/test1.jpg" alt="María González" />
                                 <div>
                                     <h4 className="font-semibold text-gray-900">María González</h4>
                                     <p className="text-gray-600 text-sm">Paciente desde 2019</p>
@@ -183,7 +183,7 @@ function Inicio() {
                         
                         <div className="bg-gray-50 rounded-lg p-6">
                             <div className="flex items-center mb-4">
-                                <img className="w-12 h-12 rounded-full mr-4" src="/test2.jpg" alt="Carlos Rodríguez" />
+                                <img className="w-12 h-12 rounded-full mr-4" src="/inicio/test2.jpg" alt="Carlos Rodríguez" />
                                 <div>
                                     <h4 className="font-semibold text-gray-900">Carlos Rodríguez</h4>
                                     <p className="text-gray-600 text-sm">Paciente desde 2020</p>
@@ -196,7 +196,7 @@ function Inicio() {
                         
                         <div className="bg-gray-50 rounded-lg p-6">
                             <div className="flex items-center mb-4">
-                                <img className="w-12 h-12 object-cover rounded-full mr-4" src="/test3.webp" alt="Ana López" />
+                                <img className="w-12 h-12 object-cover rounded-full mr-4" src="/inicio/test3.webp" alt="Ana López" />
                                 <div>
                                     <h4 className="font-semibold text-gray-900">Ana López</h4>
                                     <p className="text-gray-600 text-sm">Paciente desde 2018</p>

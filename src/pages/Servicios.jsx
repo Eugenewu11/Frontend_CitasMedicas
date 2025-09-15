@@ -1,69 +1,7 @@
-import { useState, useEffect } from 'react'
 import Footer from '../components/Footer'
 
 export default function Servicios() {
     const imagenDefault = '/servicios/default.jpg'
-    const [contenido, setContenido] = useState("Haz clic en un servicio para ver más información.")
-    const [imagenSeleccionada, setImagenSeleccionada] = useState(imagenDefault)
-    
-    // Estados para el carousel
-    const [currentSlide, setCurrentSlide] = useState(0)
-
-    const inforServicios = {
-        1: "Su primer paso hacia la salud. Diagnóstico, tratamiento y prevención de enfermedades comunes, así como control de salud general y referencia a especialistas cuando sea necesario.",
-        2: "Cuidado especializado para los más pequeños. Seguimiento del crecimiento y desarrollo, esquema de vacunación y tratamiento de enfermedades infantiles en un ambiente de confianza.",
-        3: "Salud integral de la mujer en todas las etapas de su vida. Control prenatal, chequeos ginecológicos preventivos y manejo de condiciones específicas con calidez y profesionalismo.",
-        4: "Expertos en el cuidado de su corazón. Evaluación, diagnóstico y tratamiento de enfermedades cardiovasculares con tecnología avanzada para garantizar su bienestar a largo plazo.",
-        5: "Cuide la salud de su piel, el órgano más extenso. Diagnóstico de enfermedades de la piel, cáncer de piel, tratamientos estéticos médicos y manejo del acné.",
-        6: "Una sonrisa saludable es sinónimo de bienestar. Ofrecemos odontología general, limpiezas, blanqueamiento, ortodoncia y más, para toda la familia.",
-        7: "Cuidamos de su salud mental. Brindamos apoyo y herramientas para manejar el estrés, la ansiedad, la depresión y fomentar el bienestar emocional en un espacio seguro.",
-        8: "Resultados confiables y precisos. Realizamos análisis clínicos con tecnología de punta para un diagnóstico certero y rápido.",
-    }
-
-    const imagenesServicios = {
-        1: "/servicios/medGeneral.webp",
-        2: "/servicios/pediatria.jpg",
-        3: "/servicios/ginecologia.webp",
-        4: "/servicios/cardiologia.png",
-        5: "/servicios/dermatologia.webp",
-        6: "/servicios/odontologia.jpeg",
-        7: "/servicios/psicologia.png",
-        8: "/servicios/labClinico.jpg",
-    }
-
-    const nombresServicios = {
-        1: "Medicina General",
-        2: "Pediatría",
-        3: "Ginecología",
-        4: "Cardiología",
-        5: "Dermatología",
-        6: "Odontología",
-        7: "Psicología",
-        8: "Laboratorio Clínico"
-    }
-
-    // Convertir a array para el carousel
-    const servicios = Object.keys(inforServicios).map(key => ({
-        id: key,
-        nombre: nombresServicios[key],
-        descripcion: inforServicios[key],
-        imagen: imagenesServicios[key]
-    }))
-
-    const totalSlides = servicios.length
-
-    // Auto-play del carousel
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentSlide(prev => (prev + 1) % totalSlides)
-        }, 4000)
-
-        return () => clearInterval(interval)
-    }, [totalSlides])
-
-    const goToSlide = (index) => {
-        setCurrentSlide(index)
-    }
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -80,14 +18,6 @@ export default function Servicios() {
                                 calificado y tecnología de vanguardia para ofrecerle el más alto estándar de atención en cada una de nuestras especialidades. 
                                 Su bienestar es nuestra prioridad.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
-                                    Agendar Cita
-                                </button>
-                                <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-all duration-200">
-                                    Contáctanos
-                                </button>
-                            </div>
                         </div>
                         <div className="hidden md:block">
                             <img 
@@ -100,72 +30,241 @@ export default function Servicios() {
                 </div>
             </section>
 
-            {/* Carousel Section */}
+            {/* Servicios Section */}
             <section className="py-16 bg-white">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                            Nuestras Especialidades
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                            Servicios Médicos Especializados
                         </h2>
-                        <p className="text-lg text-gray-600">
-                            Descubre todos nuestros servicios médicos especializados
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                            Ofrecemos una amplia gama de servicios médicos con tecnología de vanguardia 
+                            y personal altamente capacitado para brindarle la mejor atención.
                         </p>
                     </div>
 
-                    {/* Carousel Container */}
-                    <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden max-w-2xl mx-auto">
-                        {/* Main Carousel */}
-                        <div className="relative h-[550px] md:h-[600px]">
-                            {servicios.map((servicio, index) => (
-                                <div
-                                    key={servicio.id}
-                                    className={`absolute inset-0 transition-opacity duration-500 ${
-                                        index === currentSlide ? 'opacity-100' : 'opacity-0'
-                                    }`}
-                                >
-                                    <div className="h-full flex flex-col">
-                                        {/* Imagen */}
-                                        <div className="h-2/3 overflow-hidden">
-                                            <img
-                                                src={servicio.imagen}
-                                                alt={servicio.nombre}
-                                                className="w-full h-full object-cover object-[0_25%]"
-                                            />
-                                        </div>
-                                        
-                                        {/* Contenido */}
-                                        <div className="p-6 pb-10 flex-1 flex flex-col justify-center text-center bg-gray-50"> 
-                                            <h3 className="text-xl font-bold text-gray-800 mb-3">
-                                                {servicio.nombre}
-                                            </h3>
-                                            <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
-                                                {servicio.descripcion}
-                                            </p>
-                                            <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200 mx-auto text-sm">
-                                                Agendar Cita
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {/* Medicina General */}
+                        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                            <img 
+                                src="/servicios/consultaGen.jpg" 
+                                alt="Consultas de Medicina General"
+                                className="w-full h-48 object-cover"
+                                onError={(e) => { e.target.src = imagenDefault }}
+                            />
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">Consultas de Medicina General</h3>
+                                <p className="text-gray-600 mb-4">
+                                    Atención médica integral para toda la familia. Diagnóstico, tratamiento y seguimiento 
+                                    de enfermedades comunes con un enfoque preventivo y personalizado.
+                                </p>
+                                <button className="text-blue-600 hover:text-blue-800 font-semibold">
+                                    Más información →
+                                </button>
+                            </div>
                         </div>
 
-                        {/* Progress Bars */}
-                        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-1">
-                            {servicios.map((_, index) => (
-                                <button
-                                    key={index}
-                                    onClick={() => goToSlide(index)}
-                                    className={`h-1 transition-all duration-200 ${
-                                        index === currentSlide 
-                                            ? 'bg-blue-600 w-8 ' 
-                                            : 'bg-gray-300 hover:bg-gray-400 w-6'
-                                    }`}
-                                />
-                            ))}
+                        {/* Laboratorio */}
+                        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                            <img 
+                                src="/servicios/labClinico.jpg" 
+                                alt="Laboratorio de Análisis Clínicos"
+                                className="w-full h-48 object-cover"
+                                onError={(e) => { e.target.src = imagenDefault }}
+                            />
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">Laboratorio de Análisis Clínicos</h3>
+                                <p className="text-gray-600 mb-4">
+                                    Exámenes de laboratorio completos con resultados precisos y rápidos. 
+                                    Análisis de sangre, orina, heces y otros estudios especializados.
+                                </p>
+                                <button className="text-blue-600 hover:text-blue-800 font-semibold">
+                                    Más información →
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Imagenología */}
+                        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                            <img 
+                                src="/servicios/imagenologia.webp" 
+                                alt="Estudios de Imagenología"
+                                className="w-full h-48 object-cover"
+                                onError={(e) => { e.target.src = imagenDefault }}
+                            />
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">Estudios de Imagenología</h3>
+                                <p className="text-gray-600 mb-4">
+                                    Rayos X digitales y ultrasonidos con tecnología avanzada para diagnósticos 
+                                    precisos y detallados en todas las especialidades médicas.
+                                </p>
+                                <button className="text-blue-600 hover:text-blue-800 font-semibold">
+                                    Más información →
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Vacunación */}
+                        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                            <img 
+                                src="/servicios/vacunacion.jpg" 
+                                alt="Servicios de Vacunación"
+                                className="w-full h-48 object-cover"
+                                onError={(e) => { e.target.src = imagenDefault }}
+                            />
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">Vacunación</h3>
+                                <p className="text-gray-600 mb-4">
+                                    Esquemas completos de vacunación para niños y adultos. Vacunas preventivas, 
+                                    de viaje y programas especiales de inmunización.
+                                </p>
+                                <button className="text-blue-600 hover:text-blue-800 font-semibold">
+                                    Más información →
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Emergencias */}
+                        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                            <img 
+                                src="/servicios/emergencias.jpeg" 
+                                alt="Servicios de Emergencias"
+                                className="w-full h-48 object-cover"
+                                onError={(e) => { e.target.src = imagenDefault }}
+                            />
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">Emergencias</h3>
+                                <p className="text-gray-600 mb-4">
+                                    Atención médica de urgencia las 24 horas. Equipo médico especializado 
+                                    y equipos de emergencia para situaciones críticas.
+                                </p>
+                                <button className="text-blue-600 hover:text-blue-800 font-semibold">
+                                    Más información →
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Hospitalización */}
+                        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                            <img 
+                                src="/servicios/hospitalizacion.jpg" 
+                                alt="Servicios de Hospitalización"
+                                className="w-full h-48 object-cover"
+                                onError={(e) => { e.target.src = imagenDefault }}
+                            />
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">Hospitalización</h3>
+                                <p className="text-gray-600 mb-4">
+                                    Habitaciones cómodas y modernas con atención médica continua. 
+                                    Personal especializado disponible las 24 horas para su cuidado.
+                                </p>
+                                <button className="text-blue-600 hover:text-blue-800 font-semibold">
+                                    Más información →
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Electrocardiogramas */}
+                        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                            <img 
+                                src="/servicios/electrocardiograma.webp" 
+                                alt="Electrocardiogramas"
+                                className="w-full h-48 object-cover"
+                                onError={(e) => { e.target.src = imagenDefault }}
+                            />
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">Electrocardiogramas</h3>
+                                <p className="text-gray-600 mb-4">
+                                    Estudios cardiológicos completos para evaluar la función del corazón. 
+                                    Equipos digitales de última generación para diagnósticos precisos.
+                                </p>
+                                <button className="text-blue-600 hover:text-blue-800 font-semibold">
+                                    Más información →
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Terapia y Rehabilitación */}
+                        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                            <img 
+                                src="/servicios/fisioterapia.jpg" 
+                                alt="Servicios de Terapia y Rehabilitación"
+                                className="w-full h-48 object-cover"
+                                onError={(e) => { e.target.src = imagenDefault }}
+                            />
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">Terapia y Rehabilitación</h3>
+                                <p className="text-gray-600 mb-4">
+                                    Fisioterapia, terapia respiratoria y programas de rehabilitación integral. 
+                                    Equipos especializados y terapeutas certificados.
+                                </p>
+                                <button className="text-blue-600 hover:text-blue-800 font-semibold">
+                                    Más información →
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Chequeos Preventivos */}
+                        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                            <img 
+                                src="/servicios/chequeo-preventivo.jpg" 
+                                alt="Chequeos Médicos Preventivos"
+                                className="w-full h-48 object-cover"
+                                onError={(e) => { e.target.src = imagenDefault }}
+                            />
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">Chequeos Médicos Preventivos</h3>
+                                <p className="text-gray-600 mb-4">
+                                    Evaluaciones médicas completas para la detección temprana de enfermedades. 
+                                    Programas personalizados según edad y factores de riesgo.
+                                </p>
+                                <button className="text-blue-600 hover:text-blue-800 font-semibold">
+                                    Más información →
+                                </button>
+                            </div>
+                        </div>
+                    
+                        {/* Farmacia */}
+                        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                            <img 
+                                src="/servicios/farmacia.jpg" 
+                                alt="Servicios de Farmacia"
+                                className="w-full h-48 object-cover"
+                                onError={(e) => { e.target.src = imagenDefault }}
+                            />
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">Farmacia</h3>
+                                <p className="text-gray-600 mb-4">
+                                    Medicamentos de calidad garantizada y asesoría farmacéutica profesional. 
+                                    Amplio surtido de medicamentos y productos para el cuidado de la salud.
+                                </p>
+                                <button className="text-blue-600 hover:text-blue-800 font-semibold">
+                                    Más información →
+                                </button>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
+            {/* CTA Section */}
+            <section className="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-16">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                        ¿Necesita atención médica?
+                    </h2>
+                    <p className="text-xl mb-8 text-blue-100">
+                        Nuestro equipo médico está disponible para brindarle la mejor atención. 
+                        Agende su cita o contáctenos para emergencias.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200">
+                            Agendar Cita Ahora
+                        </button>
+                        <button className="border-2 border-white text-white hover:bg-white hover:text-blue-800 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200">
+                            Llamar para Emergencias
+                        </button>
+                    </div>
                 </div>
             </section>
 

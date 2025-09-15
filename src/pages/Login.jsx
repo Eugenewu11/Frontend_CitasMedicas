@@ -20,7 +20,7 @@ function Login() {
                         </label>
                         <input
                             type="email"
-                            placeholder="Escribe aquí..."
+                            placeholder="juan.perez@gmail.com"
                             className="w-full px-4 py-3 rounded-lg border-none outline-none text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-orange-400 focus:ring-opacity-50 transition-all"
                         />
                     </div>

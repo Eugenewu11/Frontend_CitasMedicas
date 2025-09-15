@@ -73,7 +73,7 @@ export default function Navbar() {
                         onClick={() => handleNavigation('/servicios')}
                         className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors duration-200"
                       >
-                        Todos los Servicios
+                        Nuestros Servicios
                       </button>
                       <button
                         onClick={() => handleNavigation('/especialidades')}
@@ -81,12 +81,7 @@ export default function Navbar() {
                       >
                         Especialidades
                       </button>
-                      <button
-                        onClick={() => handleNavigation('/medicos')}
-                        className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors duration-200"
-                      >
-                        Nuestros Médicos
-                      </button>
+                      
                     </div>
                   </div>
                 )}

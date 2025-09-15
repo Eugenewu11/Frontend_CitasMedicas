@@ -5,10 +5,9 @@ export default function Footer() {
                     <div className="grid md:grid-cols-3 gap-8">
                         <div>
                             <h3 className="text-lg font-semibold mb-4">Horarios de Atención</h3>
-                            <div className="space-y-2 text-gray-300">
-                                <p>Lunes - Viernes: 7:00 AM - 7:00 PM</p>
-                                <p>Sábados: 8:00 AM - 4:00 PM</p>
-                                <p>Emergencias: 24/7</p>
+                            <div className="space-y-2">
+                                <p className="text-gray-300">Lunes - Domingo: <span className="text-green-400">Abierto siempre</span></p>
+                                <p className="text-gray-300">Emergencias: 24/7</p>
                             </div>
                         </div>
                         
