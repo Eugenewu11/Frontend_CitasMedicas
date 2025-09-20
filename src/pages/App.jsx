@@ -7,6 +7,9 @@ import Login from './Login.jsx'
 import Servicios from './Servicios.jsx'
 import Especialidades from './Especialidades.jsx'
 import Medicos from './Medicos.jsx'
+import SobreNosotros from "./SobreNosotros.jsx";
+
+
 import '../css/App.css'
 
 function App() {
@@ -23,6 +26,7 @@ function App() {
           <Route path="/servicios" element={<Servicios/>} />
           <Route path="/especialidades" element={<Especialidades/>}/>
           <Route path="/medicos" element={<Medicos/>}/>
+          <Route path="/nosotros" element={<SobreNosotros/>}/>
         </Routes>
       </div>
     </div>
